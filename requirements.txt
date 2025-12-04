@@ -1,0 +1,5 @@
+flask
+flask-session
+flask-mysql-connector
+pip install -r requirements.txt
+reportlab

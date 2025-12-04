@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}My Certificates{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card glass p-3">
+      <h5>My Certificates</h5>
+      {% if certs %}
+        <ul class="list-group">
+          {% for c in certs %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <strong>Event ID: {{ c[1] }}</strong><br>
+                <small class="text-muted">Issued: {{ c[2] }}</small>
+              </div>
+              <a class="btn btn-sm btn-primary" href="{{ c[3] }}" target="_blank">View Certificate</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="alert alert-info">No certificates yet.</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

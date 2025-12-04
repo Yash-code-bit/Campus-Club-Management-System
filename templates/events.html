@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Events{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+
+  <h3 class="mb-3">Upcoming Events</h3>
+
+  <div class="row g-3">
+
+    {% if events %}
+      {% for e in events %}
+      <!-- e = [event_id, name, date, venue, status, club_name] -->
+
+      <div class="col-md-4">
+        <div class="card glass p-3 shadow-sm">
+
+          <h5 class="fw-bold">{{ e[1] }}</h5>
+          <p class="text-muted mb-1"><i class="bi bi-calendar-event"></i> {{ e[2] }}</p>
+          <p class="text-muted mb-1"><i class="bi bi-geo-alt"></i> {{ e[3] }}</p>
+          <p class="small"><b>Club:</b> {{ e[5] }}</p>
+
+          <div class="d-flex justify-content-between mt-3">
+
+            {% if session.get('student_id') %}
+              <!-- Student Logged In -->
+              <a href="{{ url_for('register_event', event_id=e[0]) }}"
+                 class="btn btn-primary btn-sm">
+                Register
+              </a>
+
+            {% elif session.get('admin_id') %}
+              <!-- Faculty Logged In -->
+              <span class="badge bg-secondary">
+                Faculty View Only
+              </span>
+
+            {% else %}
+              <!-- Not Logged In -->
+              <a href="{{ url_for('student_login') }}"
+                 class="btn btn-outline-light btn-sm">
+                Login to Register
+              </a>
+            {% endif %}
+
+          </div>
+
+        </div>
+      </div>
+
+      {% endfor %}
+    {% else %}
+      <div class="alert alert-info">No events scheduled.</div>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}

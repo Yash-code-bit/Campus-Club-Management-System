@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Issue Certificates{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h3 class="fw-bold mb-4">Issue Certificates</h3>
+
+  <div class="list-group">
+
+    {% for e in events %}
+      <a href="/admin/certificates/event/{{ e[0] }}" class="list-group-item list-group-item-action">
+        <strong>{{ e[1] }}</strong>
+        <span class="float-end text-muted">View Registrations →</span>
+      </a>
+    {% endfor %}
+
+    {% if not events %}
+      <div class="alert alert-info">No events found for your clubs.</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

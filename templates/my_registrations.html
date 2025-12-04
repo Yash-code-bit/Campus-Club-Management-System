@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}My Registrations{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h3 class="mb-4">My Event Registrations</h3>
+
+  {% if registrations %}
+    <div class="row g-3">
+      {% for r in registrations %}
+      <div class="col-md-4">
+        <div class="card glass p-3 shadow-sm">
+          <h5 class="fw-bold">{{ r[0] }}</h5>
+          <p class="text-muted small">{{ r[1] }}</p>
+          <p class="small"><i class="bi bi-geo-alt"></i> {{ r[2] }}</p>
+          <span class="badge bg-success">{{ r[3] }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-info">You haven’t registered for any events yet.</div>
+  {% endif %}
+</div>
+{% endblock %}

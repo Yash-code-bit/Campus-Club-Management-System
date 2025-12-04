@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: #4e73df;
+    padding: 15px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.content {
+    padding: 40px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1cc88a;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.home-container h1 {
+    font-size: 30px;
+}
+
+.login-container {
+    width: 350px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ddd;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 15px;
+}
+
+.error {
+    color: red;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

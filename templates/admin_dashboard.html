@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Welcome, {{ name }}</h3>
+
+    <div class="card glass p-4">
+        <h5>Admin Actions</h5>
+        <hr>
+
+        <div class="d-grid gap-3">
+
+            <!-- Manage Events -->
+            <a href="/admin/events" class="btn btn-primary">Manage Events</a>
+
+            <!-- Issue Certificates (NEW BUTTON) -->
+            <a href="/admin/certificates" class="btn btn-success">Issue Certificates</a>
+
+            <!-- View All Events -->
+            <a href="/events" class="btn btn-outline-secondary">View All Events</a>
+
+            <!-- Logout -->
+            <a href="/admin/logout" class="btn btn-danger">Logout</a>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

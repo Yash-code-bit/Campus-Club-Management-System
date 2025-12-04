@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Student Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+  <h2 class="fw-bold mb-3">Hello, {{ name }} 👋</h2>
+  <p class="text-muted">Welcome to your student dashboard.</p>
+
+  <div class="row mt-4 g-3">
+
+    <!-- View Events -->
+    <div class="col-md-4">
+      <div class="card glass p-3 shadow-sm">
+        <h5 class="fw-bold">Upcoming Events</h5>
+        <p class="small text-muted">Browse all available events and register.</p>
+        <a href="/events" class="btn btn-primary w-100">View Events</a>
+      </div>
+    </div>
+
+    <!-- My Registrations -->
+    <div class="col-md-4">
+      <div class="card glass p-3 shadow-sm">
+        <h5 class="fw-bold">My Registrations</h5>
+        <p class="small text-muted">See the events you have registered for.</p>
+        <a href="/my_registrations" class="btn btn-success w-100">View Registrations</a>
+      </div>
+    </div>
+
+    <!-- My Certificates -->
+    <div class="col-md-4">
+      <div class="card glass p-3 shadow-sm">
+        <h5 class="fw-bold">My Certificates</h5>
+        <p class="small text-muted">Download certificates for attended events.</p>
+        <a href="/my_certificates" class="btn btn-warning w-100">My Certificates</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

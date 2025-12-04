@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Registered Students{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+  <h3 class="fw-bold mb-3">Registered Students – {{ event[0] }}</h3>
+
+  <div class="list-group">
+    {% for s in students %}
+      <div class="list-group-item">
+        <div class="d-flex justify-content-between">
+          <div>
+            <strong>{{ s[1] }}</strong>
+            <br>
+            <small>{{ s[2] }}</small>
+          </div>
+
+          <a href="/admin/certificates/issue/{{ event_id }}/{{ s[0] }}"
+             class="btn btn-primary btn-sm">
+             Issue Certificate
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% if not students %}
+      <div class="alert alert-info">No students registered.</div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}
